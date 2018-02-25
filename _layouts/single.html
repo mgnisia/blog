@@ -95,7 +95,10 @@ layout: default
 </div>
 
 <script type="text/javascript">
-var allCodeBlocksElements = $( "code" );
+// var allCodeBlocksElements = $( "code" );
+var allhightlightElements = $( ".highlight" );
+console.log(allhightlightElements);
+var allCodeBlocksElements = $( allhightlightElements ).find( "code" );
 
 allCodeBlocksElements.each(function(i) {
  	// add different id for each code block
