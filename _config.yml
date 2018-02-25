@@ -8,11 +8,11 @@
 minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "en-US"
-title                    : "gnisitricks"
+locale                   : "de-DE"
+title                    : "Blog über Python, R, Anki und Co"
 title_separator          : "-"
 name                     : "Moritz Gnisia"
-description              : "An amazing website."
+description              : "Blog über Python, R, Anki und viele andere Dinge"
 url                      : # "https://mgnisia.github.io/"  # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # "mgnisia/minimal-mistakes" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -91,9 +91,10 @@ analytics:
 # Site Author
 author:
   name             : "Moritz Gnisia"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
+  avatar           : # "/assets/images/Foto_Querformat.jpg"
+  bio              : "B.Sc. Industrial Engineering & B.Sc. Mechanical Engineering (TU Darmstadt) <br>
+                      Passioned about everything technical from programming to aviation."
+  location         : "Germany"
   email            : "gnisitricks@gmail.com"
   uri              :
   home             : # null (default), "absolute or relative url to link to author home"
@@ -109,17 +110,17 @@ author:
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         : # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
+  linkedin         : "https://www.linkedin.com/in/moritz-gnisia-87182499/" # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
   pinterest        :
   soundcloud       :
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
   steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
   tumblr           :
-  twitter          :
+  twitter          : "@mgnisia"
   vine             :
   weibo            :
-  xing             :
-  youtube          : "https://youtube.com/c/MichaelRoseDesign"
+  xing             : "https://www.xing.com/profile/Moritz_Gnisia/cv"
+  youtube          : "https://www.youtube.com/channel/UCTFLQx6OC8k8FAb4MCoUG3A"
 
 
 # Reading Files
