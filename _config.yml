@@ -9,7 +9,7 @@ minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "n
 
 # Site Settings
 locale                   : "de-DE"
-title                    : "Blog über Python, R, Anki und Co"
+title                    : "Tutorials, Tipps & Tricks zu Python, R, Anki und Co"
 title_separator          : "-"
 name                     : "Moritz Gnisia"
 description              : "Blog über Python, R, Anki und viele andere Dinge"
@@ -110,7 +110,7 @@ author:
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         : "https://www.linkedin.com/in/moritz-gnisia-87182499/" # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
+  linkedin         : "moritz-gnisia-87182499/" # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
   pinterest        :
   soundcloud       :
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
@@ -119,7 +119,7 @@ author:
   twitter          : "@mgnisia"
   vine             :
   weibo            :
-  xing             : "https://www.xing.com/profile/Moritz_Gnisia/cv"
+  xing             : "Moritz_Gnisia/cv"
   youtube          : "https://www.youtube.com/channel/UCTFLQx6OC8k8FAb4MCoUG3A"
 
 
