@@ -13,3 +13,5 @@ main:
     url: /page-a/
   - title: "Sitemap"
     url: /sitemap/
+  - title: "Tags"
+    url: /tags/
