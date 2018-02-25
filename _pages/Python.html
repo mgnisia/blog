@@ -1,0 +1,12 @@
+---
+layout: archive
+permalink: /Python/
+title: "Tutorials zu Python"
+author_profile: true
+---
+
+{% for post in site.posts %}
+  {% if post.tags contains 'Python' %}
+    {% include archive-single.html %}
+  {% endif %}
+{% endfor %}
