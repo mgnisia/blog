@@ -1,8 +1,12 @@
 ---
+layout: single
 title:  "Einfache Funktionen in Python"
 tags:
   - Python
+  - Funktion
 ---
+Wie ist eine Funktion in Python aufgebaut? Worauf sollte man achten?
+
 ### Theorie
 
 Grundsätzlich baut sich eine Funktion in Python wie folgt auf:
