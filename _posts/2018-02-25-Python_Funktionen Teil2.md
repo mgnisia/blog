@@ -8,7 +8,9 @@ tags:
 Welche Möglichkeiten bestehen Funktionen zu erweitern?
 
 Zunächst einmal gilt es zu unterscheiden, welche Parametertypen für eine Funktion grundsätzlich möglich sind. Diese kann man der folgenden Tabelle entnehmen.
+
 ### Theorie
+
 
 |    Typ   |   Erläuterung          |
 |:---------:|-------------|
@@ -19,7 +21,9 @@ Zunächst einmal gilt es zu unterscheiden, welche Parametertypen für eine Funkt
 
 Damit die verschiedenen Parametertypen deutlich werden, folgen nun zu jedem Typ ein Beispiel.
 
-#### Pflichtparameter
+
+### Pflichtparameter
+
 
 Bereits im Post [einfache Funktion]({{ site.baseurl }}{% post_url 2018-02-25-Python_Funktionen %}) haben wir eine Funktion mit Pflichtparametern geschrieben, diese war wie folgt definiert:
 ``` python
@@ -30,7 +34,7 @@ def addieren(add1, add2):
 ```
 Die Parameter add1 und add2 müssen auf jeden Fall beim Aufrufen der Funktion vorgeben werden.
 
-#### Standardparameter
+### Standardparameter
 
 
 ``` python
@@ -40,32 +44,23 @@ def addieren_pflicht(add1, add2=5):
 	return ergebnis
 ```
 
-
-
-Wesentlichen Eigenschaften sind:
-
-* Eine Funktion beginnt immer mit dem Keyword `def`
-* Sie muss einen Funktionsnamen besitzen
-* Sie sollten einen Rückgabewert besitzen, dieser wird durch `return` zurückgegeben
-
-### Beispiel
-
-Eine Funktion zum Addieren von zwei Zahlen kann daher wie folgt definiert werden:
+Werden Standardparameter wie in diesem Fall für den Parameter `add2` vorgegeben, so kann die Funktion auch nur mit einem Parameter aufgerufen werden.
 
 ``` python
-def addieren(add1, add2):
-	"In dieser Funktion addieren wir zwei Parameter."
-	ergebnis = add1 + add2
-	return ergebnis
+addieren_pflicht(add1=2)
 ```
 
-### Aufrufen von Funktionen
+Das Ergebnis wäre in diesem Fall dann 7.
 
-In Python kann man die Funktion auf zwei Arten aufrufen:
+
+### Parameter mit unterschiedlicher Länge `*args`
+
+Allgemein baut sich eine Funktion `*args` folgendermaßen auf:
+
 ``` python
-# 1. Möglichkeit:
-addieren(1, 2)
-# 2. Möglichkeit;
-addieren(add1=1, add2=2)
+def Funktionsname(*args) :
+for i in args :
+  return i
 ```
-Die Unterschiede zwischen beiden Möglichkeiten bestehen darin, dass im ersten Fall im Gegensatz zum zweiten Fall, die Parameter `add1` und `add2` nicht vorgegeben werden. Bei Funktionen mit vielen Parametern bietet es sich an die zweite Möglichkeit zu verwenden.
+
+Eine Funktion, die beliebig viele Werte addiert, könnte mithilfe von `*args` sehr einfach gebaut werden.
