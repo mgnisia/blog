@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-27T19:23:54+01:00</updated><id>http://localhost:4000/</id><title type="html">Tutorials, Tipps &amp;amp; Tricks zu Python, R, Anki und Co</title><subtitle>Blog über Python, R, Anki und viele andere Dinge</subtitle><author><name>Moritz Gnisia</name><email>gnisitricks@gmail.com</email></author><entry><title type="html">Hosting einer Jekyll Website auf einem Linux Server</title><link href="http://localhost:4000/Hosting_Jekyll/" rel="alternate" type="text/html" title="Hosting einer Jekyll Website auf einem Linux Server" /><published>2018-02-27T00:00:00+01:00</published><updated>2018-02-27T00:00:00+01:00</updated><id>http://localhost:4000/Hosting_Jekyll</id><content type="html" xml:base="http://localhost:4000/Hosting_Jekyll/">&lt;h3 id=&quot;folgende-voraussetzungen-solltet-ihr-für-die-folgende-anleitungtutorial-mitbringen&quot;&gt;Folgende Voraussetzungen solltet ihr für die folgende Anleitung/Tutorial mitbringen:&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-27T21:14:01+01:00</updated><id>http://localhost:4000/</id><title type="html">Tutorials, Tipps &amp;amp; Tricks zu Python, R, Anki und Co</title><subtitle>Blog über Python, R, Anki und viele andere Dinge</subtitle><author><name>Moritz Gnisia</name><email>gnisitricks@gmail.com</email></author><entry><title type="html">Hosting einer Jekyll Website auf einem Linux Server</title><link href="http://localhost:4000/Hosting_Jekyll/" rel="alternate" type="text/html" title="Hosting einer Jekyll Website auf einem Linux Server" /><published>2018-02-27T00:00:00+01:00</published><updated>2018-02-27T00:00:00+01:00</updated><id>http://localhost:4000/Hosting_Jekyll</id><content type="html" xml:base="http://localhost:4000/Hosting_Jekyll/">&lt;p&gt;Mit Jekyll und einem passenden Server könnt ihr relativ schnell eine schöne Website für z.B. einen Blog umsetzen.&lt;/p&gt;
+
+&lt;h3 id=&quot;folgende-voraussetzungen-solltet-ihr-für-die-folgende-anleitungtutorial-mitbringen&quot;&gt;Folgende Voraussetzungen solltet ihr für die folgende Anleitung/Tutorial mitbringen:&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Linux-Server z.B. mit Ubuntu 16.04 bei einem Web-/Cloudhoster&lt;/li&gt;
@@ -52,7 +54,7 @@
   &lt;li&gt;Damit nginx auf den korrekten Ordner für unsere jekyll Website zugreift, erstellen wir noch den passenden Ordner&lt;/li&gt;
   &lt;li&gt;Wir wechseln in das passende Verzeichnis &lt;code class=&quot;highlighter-rouge&quot;&gt;cd /var/www&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;Erstellen eines neuen Ordners für die Website z.B. &lt;code class=&quot;highlighter-rouge&quot;&gt;mkdir eure_website&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Anpassung von nginx, damit es auf die Website zugreift &lt;code class=&quot;highlighter-rouge&quot;&gt;nano /etc/nginx/sites-enabled/default&lt;/code&gt;, nun passt die Einstellung &lt;code class=&quot;highlighter-rouge&quot;&gt;root /var/www/html;&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;root /var/www/eure_website;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Anpassung von nginx, damit es auf die Website zugreift &lt;code class=&quot;highlighter-rouge&quot;&gt;nano /etc/nginx/sites-enabled/default&lt;/code&gt;, nun passt die Einstellung &lt;code class=&quot;highlighter-rouge&quot;&gt;root /var/www/html;&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;root /var/www/eure_website;&lt;/code&gt;. Die Datei speichert ihr mit STRG + X und danach mit Y.&lt;/li&gt;
   &lt;li&gt;Wir wechseln wieder in unser Home-Verzeichnis mit &lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -80,14 +82,37 @@ git clone &lt;span class=&quot;nv&quot;&gt;$GIT_REPO&lt;/span&gt; &lt;span class
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Die Datei machen wir jetzt noch ausfübar mit &lt;code class=&quot;highlighter-rouge&quot;&gt;chmod +x hooks/post-receive&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Die Datei machen wir jetzt noch ausfübar mit &lt;code class=&quot;highlighter-rouge&quot;&gt;chmod +x hooks/post-receive&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;Mein Gemfile sind wie folgt aus:&lt;/p&gt;
+    &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'https://rubygems.org'&lt;/span&gt;
+ &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;minimal-mistakes-jekyll&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;Damit ist sichergestellt, dass korrekte Theme für eure jekyll Website mit dem Befehl &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle install $GEMFILE&lt;/code&gt; installiert wird.&lt;/p&gt;
+  &lt;/li&gt;
   &lt;li&gt;Jetzt gehen wir wieder in den Ordner, in dem sich unsere jekyll Website befindet. Hier habe ich bereits git Repository erstellt. Damit wir dieses jetzt auf unseren Server pushen können geben wir folgenden Befehl ein &lt;code class=&quot;highlighter-rouge&quot;&gt;git remote add deploy root@SERVER-IP:~/repo_website.git&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Mit &lt;code class=&quot;highlighter-rouge&quot;&gt;git push deploy master&lt;/code&gt; wird jetzt eure jekyll Website auf den Server gepusht und das Skript &lt;code class=&quot;highlighter-rouge&quot;&gt;post-receive&lt;/code&gt; ausgeführt, hierbei kann es unterumständen noch zu kleineren Problemen kommen, dies hängt beispielsweise davon ab, ob ihr für euer jekyll Theme alle pakete installiert habt. Auf eurem Server könnt ihr im Verzeichnis &lt;code class=&quot;highlighter-rouge&quot;&gt;repo_website.git/hooks/&lt;/code&gt; mit &lt;code class=&quot;highlighter-rouge&quot;&gt;bash post-receive&lt;/code&gt; solange testen bis alle Probleme behoben sind. Wenn es durch läuft, müsst ihr noch für einen neuen Post einen push auf eurem Rechner durchführen und die Website passt sich automatisch an.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Mit &lt;code class=&quot;highlighter-rouge&quot;&gt;git push deploy master&lt;/code&gt; wird jetzt eure jekyll Website auf den Server gepusht und das Skript &lt;code class=&quot;highlighter-rouge&quot;&gt;post-receive&lt;/code&gt; ausgeführt, hierbei kann es unterumständen noch zu kleineren Problemen kommen, dies hängt beispielsweise davon ab, ob ihr für euer jekyll Theme alle pakete installiert habt. Auf eurem Server könnt ihr im Verzeichnis &lt;code class=&quot;highlighter-rouge&quot;&gt;repo_website.git/hooks/&lt;/code&gt; mit &lt;code class=&quot;highlighter-rouge&quot;&gt;bash post-receive&lt;/code&gt; solange testen bis alle Probleme behoben sind. Wenn es durch läuft, müsst ihr noch für einen neuen Post einen push auf eurem Rechner durchführen und die Website passt sich automatisch an.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Für den Fall der Fälle, dass folgender Fehler bei Euch auftritt:
+ &lt;em&gt;Conversion error: Jekyll::Converters::Scss encountered an error while converting ‘assets/css/main.scss’: Invalid US-ASCII character “\xE2” on line 54&lt;/em&gt;, hat bei mir folgende Vorgehensweise (alle Befehle im Terminal eingeben) geholfen:
+        &lt;ol&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;locale-gen en_US.UTF-8&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;nano ~/.bashrc&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;export LANG=&quot;en_US.UTF-8&quot;&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;source ~/.bashrc&lt;/code&gt;&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;Abschließend startet ihr noch nginx neu &lt;code class=&quot;highlighter-rouge&quot;&gt;nginx -s reload&lt;/code&gt;, dann greift der HTTP Server auf das neue Verzeichnis zu.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;Ich hoffe, dass ihr jetzt nun erfolgreich euren jekyll Blog oder Website posten konntet :+1:
-Wenn ihr eine Domain bereits erworben habt und sie auf euren Linux Server umleiten wollte, müsst ihr nur einen A-Record erstellen und in diesem euere SERVER-IP eingeben.&lt;/p&gt;</content><author><name>Moritz Gnisia</name><email>gnisitricks@gmail.com</email></author><category term="jekyll" /><category term="Hosting" /><category term="Internet" /><category term="Linux" /><summary type="html">Folgende Voraussetzungen solltet ihr für die folgende Anleitung/Tutorial mitbringen:</summary></entry><entry><title type="html">Einfache Funktionen in Python</title><link href="http://localhost:4000/Python_Funktionen/" rel="alternate" type="text/html" title="Einfache Funktionen in Python" /><published>2018-02-25T00:00:00+01:00</published><updated>2018-02-25T00:00:00+01:00</updated><id>http://localhost:4000/Python_Funktionen</id><content type="html" xml:base="http://localhost:4000/Python_Funktionen/">&lt;p&gt;Wie ist eine Funktion in Python aufgebaut? Worauf sollte man achten?&lt;/p&gt;
+Wenn ihr eine Domain bereits erworben habt und sie auf euren Linux Server umleiten wollte, müsst ihr nur einen A-Record erstellen und in diesem euere SERVER-IP eingeben.&lt;/p&gt;</content><author><name>Moritz Gnisia</name><email>gnisitricks@gmail.com</email></author><category term="jekyll" /><category term="Hosting" /><category term="Internet" /><category term="Linux" /><summary type="html">Mit Jekyll und einem passenden Server könnt ihr relativ schnell eine schöne Website für z.B. einen Blog umsetzen.</summary></entry><entry><title type="html">Einfache Funktionen in Python</title><link href="http://localhost:4000/Python_Funktionen/" rel="alternate" type="text/html" title="Einfache Funktionen in Python" /><published>2018-02-25T00:00:00+01:00</published><updated>2018-02-25T00:00:00+01:00</updated><id>http://localhost:4000/Python_Funktionen</id><content type="html" xml:base="http://localhost:4000/Python_Funktionen/">&lt;p&gt;Wie ist eine Funktion in Python aufgebaut? Worauf sollte man achten?&lt;/p&gt;
 
 &lt;h3 id=&quot;theorie&quot;&gt;Theorie&lt;/h3&gt;
 

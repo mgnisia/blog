@@ -1,12 +1,16 @@
 ---
-layout: single
 title:  "Hosting einer Jekyll Website auf einem Linux Server"
+# header:
+#  overlay_image: /assets/images/imgix-391813-unsplash.jpg
+#  caption: "Fotoquelle: [**Unsplash**](https://unsplash.com/photos/klWUhr-wPJ8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"
 tags:
   - jekyll
   - Hosting
   - Internet
   - Linux  
 ---
+
+Mit Jekyll und einem passenden Server könnt ihr relativ schnell eine schöne Website für z.B. einen Blog umsetzen.
 
 ### Folgende Voraussetzungen solltet ihr für die folgende Anleitung/Tutorial mitbringen:
 
@@ -50,7 +54,7 @@ Nachdem wir nun einen HTTP Server installiert haben, können wir ausprobieren, o
 1. Damit nginx auf den korrekten Ordner für unsere jekyll Website zugreift, erstellen wir noch den passenden Ordner
 2. Wir wechseln in das passende Verzeichnis `cd /var/www`
 3. Erstellen eines neuen Ordners für die Website z.B. `mkdir eure_website`
-1. Anpassung von nginx, damit es auf die Website zugreift `nano /etc/nginx/sites-enabled/default`, nun passt die Einstellung `root /var/www/html;` in `root /var/www/eure_website;`
+1. Anpassung von nginx, damit es auf die Website zugreift `nano /etc/nginx/sites-enabled/default`, nun passt die Einstellung `root /var/www/html;` in `root /var/www/eure_website;`. Die Datei speichert ihr mit STRG + X und danach mit Y.
 1. Wir wechseln wieder in unser Home-Verzeichnis mit `cd`
 
 
@@ -60,6 +64,7 @@ Nachdem wir nun einen HTTP Server installiert haben, können wir ausprobieren, o
 1. Wechseln in den Ordner `cd repo_website.git`
 1. Initialisierung des Repositorys `git --bare init`
 1. Erstellen einer neuen Datei `post-receive`, diese Datei sorgt bei jedem neuen Commit unserer Website von unserem PC dafür, dass die jekyll Website neu aufgebaut wird. Dazu geben wir ein `nano hooks/post-receive`. Es öffnet sich das nano Fenster in diesen könnt ihr folgendes bash-Skript kopieren:
+
 
 
 ``` bash
@@ -77,10 +82,28 @@ rm -Rf $TMP_GIT_CLONE
 exit
 ```
 
-
 1. Die Datei machen wir jetzt noch ausfübar mit `chmod +x hooks/post-receive`
+
+    Mein Gemfile sind wie folgt aus:
+    ``` ruby
+    source 'https://rubygems.org'
+    gem "minimal-mistakes-jekyll"
+    ```
+
+    Damit ist sichergestellt, dass korrekte Theme für eure jekyll Website mit dem Befehl `bundle install $GEMFILE` installiert wird.
+
+
 1. Jetzt gehen wir wieder in den Ordner, in dem sich unsere jekyll Website befindet. Hier habe ich bereits git Repository erstellt. Damit wir dieses jetzt auf unseren Server pushen können geben wir folgenden Befehl ein `git remote add deploy root@SERVER-IP:~/repo_website.git`
 1. Mit `git push deploy master` wird jetzt eure jekyll Website auf den Server gepusht und das Skript `post-receive` ausgeführt, hierbei kann es unterumständen noch zu kleineren Problemen kommen, dies hängt beispielsweise davon ab, ob ihr für euer jekyll Theme alle pakete installiert habt. Auf eurem Server könnt ihr im Verzeichnis `repo_website.git/hooks/` mit `bash post-receive` solange testen bis alle Probleme behoben sind. Wenn es durch läuft, müsst ihr noch für einen neuen Post einen push auf eurem Rechner durchführen und die Website passt sich automatisch an.
+
+    * Für den Fall der Fälle, dass folgender Fehler bei Euch auftritt:
+    _Conversion error: Jekyll::Converters::Scss encountered an error while converting 'assets/css/main.scss': Invalid US-ASCII character "\xE2" on line 54_, hat bei mir folgende Vorgehensweise (alle Befehle im Terminal eingeben) geholfen:
+    1. `locale-gen en_US.UTF-8`
+    1. `nano ~/.bashrc`
+    1. `export LANG="en_US.UTF-8"`
+    1. `source ~/.bashrc`
+
+
 1. Abschließend startet ihr noch nginx neu `nginx -s reload`, dann greift der HTTP Server auf das neue Verzeichnis zu.
 
 Ich hoffe, dass ihr jetzt nun erfolgreich euren jekyll Blog oder Website posten konntet :+1:
