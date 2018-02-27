@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-26T21:48:37+01:00</updated><id>http://localhost:4000/</id><title type="html">Tutorials, Tipps &amp;amp; Tricks zu Python, R, Anki und Co</title><subtitle>Blog über Python, R, Anki und viele andere Dinge</subtitle><author><name>Moritz Gnisia</name><email>gnisitricks@gmail.com</email></author><entry><title type="html">Einfache Funktionen in Python</title><link href="http://localhost:4000/Python_Funktionen/" rel="alternate" type="text/html" title="Einfache Funktionen in Python" /><published>2018-02-25T00:00:00+01:00</published><updated>2018-02-25T00:00:00+01:00</updated><id>http://localhost:4000/Python_Funktionen</id><content type="html" xml:base="http://localhost:4000/Python_Funktionen/">&lt;p&gt;Wie ist eine Funktion in Python aufgebaut? Worauf sollte man achten?&lt;/p&gt;
+
+&lt;h3 id=&quot;theorie&quot;&gt;Theorie&lt;/h3&gt;
+
+&lt;p&gt;Grundsätzlich baut sich eine Funktion in Python wie folgt auf:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Funktionsname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Parameter1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+	&lt;span class=&quot;s&quot;&gt;&quot;Beschreibung der Funktion&quot;&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;variable1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Parameter1&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;variable2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Parameter1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;variable1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;variable2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Wesentlichen Eigenschaften sind:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Eine Funktion beginnt immer mit dem Keyword &lt;code class=&quot;highlighter-rouge&quot;&gt;def&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Sie muss einen Funktionsnamen besitzen&lt;/li&gt;
+  &lt;li&gt;Sie sollten einen Rückgabewert besitzen, dieser wird durch &lt;code class=&quot;highlighter-rouge&quot;&gt;return&lt;/code&gt; zurückgegeben&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;beispiel&quot;&gt;Beispiel&lt;/h3&gt;
+
+&lt;p&gt;Eine Funktion zum Addieren von zwei Zahlen kann daher wie folgt definiert werden:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addieren&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+	&lt;span class=&quot;s&quot;&gt;&quot;In dieser Funktion addieren wir zwei Parameter.&quot;&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;ergebnis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add2&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ergebnis&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;aufrufen-von-funktionen&quot;&gt;Aufrufen von Funktionen&lt;/h3&gt;
+
+&lt;p&gt;In Python kann man die Funktion auf zwei Arten aufrufen:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 1. Möglichkeit:&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;addieren&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 2. Möglichkeit;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;addieren&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Die Unterschiede zwischen beiden Möglichkeiten bestehen darin, dass im ersten Fall im Gegensatz zum zweiten Fall, die Parameter &lt;code class=&quot;highlighter-rouge&quot;&gt;add1&lt;/code&gt; und &lt;code class=&quot;highlighter-rouge&quot;&gt;add2&lt;/code&gt; nicht vorgegeben werden. Bei Funktionen mit vielen Parametern bietet es sich an die zweite Möglichkeit zu verwenden.&lt;/p&gt;</content><author><name>Moritz Gnisia</name><email>gnisitricks@gmail.com</email></author><category term="Python" /><category term="Funktion" /><summary type="html">Wie ist eine Funktion in Python aufgebaut? Worauf sollte man achten?</summary></entry><entry><title type="html">Erweiterte Funktionen in Python</title><link href="http://localhost:4000/Python_Funktionen-Teil2/" rel="alternate" type="text/html" title="Erweiterte Funktionen in Python" /><published>2018-02-25T00:00:00+01:00</published><updated>2018-02-25T00:00:00+01:00</updated><id>http://localhost:4000/Python_Funktionen%20Teil2</id><content type="html" xml:base="http://localhost:4000/Python_Funktionen-Teil2/">&lt;p&gt;Welche Möglichkeiten bestehen Funktionen zu erweitern?&lt;/p&gt;
+
+&lt;p&gt;Zunächst einmal gilt es zu unterscheiden, welche Parametertypen für eine Funktion grundsätzlich möglich sind. Diese kann man der folgenden Tabelle entnehmen.&lt;/p&gt;
+&lt;h3 id=&quot;theorie&quot;&gt;Theorie&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Typ&lt;/th&gt;
+      &lt;th&gt;Erläuterung&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Pflichtparameter&lt;/td&gt;
+      &lt;td&gt;Diese Parameter müssen bei Aufruf der Funktion vorgegeben werden.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Standardparameter&lt;/td&gt;
+      &lt;td&gt;Diese Parameter können bei Aufruf der Funktion vorgegeben werden. Falls dies nicht der Fall ist, wird der vordefinierte Fall des Parameters angenommen.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Parameter mit unterschiedlicher Länge &lt;code class=&quot;highlighter-rouge&quot;&gt;(*args)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Von diesen Parametern (arguments) können beliebig viele an die Funktion übergeben werden.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Schlüsselparameter (&lt;code class=&quot;highlighter-rouge&quot;&gt;**kwargs&lt;/code&gt;)&lt;/td&gt;
+      &lt;td&gt;Mit diesen Parametern (keyword-arguments)  können Optionen der Funktion gesteuert werden.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Damit die verschiedenen Parametertypen deutlich werden, folgen nun zu jedem Typ ein Beispiel.&lt;/p&gt;
+
+&lt;h4 id=&quot;pflichtparameter&quot;&gt;Pflichtparameter&lt;/h4&gt;
+
+&lt;h1 id=&quot;Änderung&quot;&gt;Änderung&lt;/h1&gt;
+
+&lt;p&gt;Bereits im Post &lt;a href=&quot;/Python_Funktionen/&quot;&gt;einfache Funktion&lt;/a&gt; haben wir eine Funktion mit Pflichtparametern geschrieben, diese war wie folgt definiert:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addieren&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+	&lt;span class=&quot;s&quot;&gt;&quot;In dieser Funktion addieren wir zwei Parameter.&quot;&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;ergebnis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add2&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ergebnis&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Die Parameter add1 und add2 müssen auf jeden Fall beim Aufrufen der Funktion vorgeben werden.&lt;/p&gt;
+
+&lt;h4 id=&quot;standardparameter&quot;&gt;Standardparameter&lt;/h4&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addieren_pflicht&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+	&lt;span class=&quot;s&quot;&gt;&quot;In dieser Funktion addieren wir zwei Parameter.&quot;&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;ergebnis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add2&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ergebnis&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Wesentlichen Eigenschaften sind:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Eine Funktion beginnt immer mit dem Keyword &lt;code class=&quot;highlighter-rouge&quot;&gt;def&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Sie muss einen Funktionsnamen besitzen&lt;/li&gt;
+  &lt;li&gt;Sie sollten einen Rückgabewert besitzen, dieser wird durch &lt;code class=&quot;highlighter-rouge&quot;&gt;return&lt;/code&gt; zurückgegeben&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;beispiel&quot;&gt;Beispiel&lt;/h3&gt;
+
+&lt;p&gt;Eine Funktion zum Addieren von zwei Zahlen kann daher wie folgt definiert werden:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addieren&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+	&lt;span class=&quot;s&quot;&gt;&quot;In dieser Funktion addieren wir zwei Parameter.&quot;&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;ergebnis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add2&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ergebnis&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;aufrufen-von-funktionen&quot;&gt;Aufrufen von Funktionen&lt;/h3&gt;
+
+&lt;p&gt;In Python kann man die Funktion auf zwei Arten aufrufen:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 1. Möglichkeit:&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;addieren&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 2. Möglichkeit;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;addieren&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Die Unterschiede zwischen beiden Möglichkeiten bestehen darin, dass im ersten Fall im Gegensatz zum zweiten Fall, die Parameter &lt;code class=&quot;highlighter-rouge&quot;&gt;add1&lt;/code&gt; und &lt;code class=&quot;highlighter-rouge&quot;&gt;add2&lt;/code&gt; nicht vorgegeben werden. Bei Funktionen mit vielen Parametern bietet es sich an die zweite Möglichkeit zu verwenden.&lt;/p&gt;</content><author><name>Moritz Gnisia</name><email>gnisitricks@gmail.com</email></author><category term="Python" /><category term="Funktion" /><summary type="html">Welche Möglichkeiten bestehen Funktionen zu erweitern?</summary></entry></feed>
