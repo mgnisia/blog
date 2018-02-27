@@ -75,3 +75,6 @@ Nachdem wir nun einen HTTP Server installiert haben, können wir ausprobieren, o
 1. Die Datei machen wir jetzt noch ausfübar mit `chmod +x post-receive`
 1. Jetzt gehen wir wieder in den Ordner, in dem sich unsere jekyll Website befindet. Hier habe ich bereits git Repository erstellt. Damit wir dieses jetzt auf unseren Server pushen können geben wir folgenden Befehl ein `git remote add deploy root@SERVER-IP:~/repo_website.git`
 1. Mit `git push deploy master` wird jetzt eure jekyll Website auf den Server gepusht und das Skript `post-receive` ausgeführt, hierbei kann es unterumständen noch zu kleineren Problemen kommen, dies hängt beispielsweise davon ab, ob ihr für euer jekyll Theme alle pakete installiert habt. Auf eurem Server könnt ihr im Verzeichnis `repo_website.git/hooks/` mit `bash post-receive` solange testen bis alle Probleme behoben sind. Wenn es durch läuft, müsst ihr noch für einen neuen Post einen push auf eurem Rechner durchführen und die Website passt sich automatisch an.
+
+Ich hoffe, dass ihr jetzt nun erfolgreich euren jekyll Blog oder Website posten konntet :+1:
+Wenn ihr eine Domain bereits erworben habt und sie auf euren Linux Server umleiten wollte, müsst ihr nur einen A-Record erstellen und in diesem euere SERVER-IP eingeben.
