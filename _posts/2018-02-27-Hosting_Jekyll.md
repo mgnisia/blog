@@ -58,7 +58,7 @@ Nachdem wir nun einen HTTP Server installiert haben, können wir ausprobieren, o
 1. Erstellen eines neues Ordners `mkdir repo_website.git`
 1. Wechseln in den Ordner `cd repo_website.git`
 1. Initialisierung des Repositorys `git --bare init`
-1. Erstellen einer neuen Datei `post_receive`, diese Datei sorgt bei jedem neuen Commit unserer Website von unserem PC dafür, dass die jekyll Website neu aufgebaut wird. Dazu geben wir ein `nano hooks/receive`. Es öffnet sich das nano Fenster in diesen könnt ihr folgendes bash-Skript kopieren:
+1. Erstellen einer neuen Datei `post-receive`, diese Datei sorgt bei jedem neuen Commit unserer Website von unserem PC dafür, dass die jekyll Website neu aufgebaut wird. Dazu geben wir ein `nano hooks/receive`. Es öffnet sich das nano Fenster in diesen könnt ihr folgendes bash-Skript kopieren:
    * ``` bash
     #!/bin/bash
     set -x
@@ -72,4 +72,5 @@ Nachdem wir nun einen HTTP Server installiert haben, können wir ausprobieren, o
     rm -Rf $TMP_GIT_CLONE
     exit
     ```
+1. Die Datei machen wir jetzt noch ausfübar mit `chmod +x post-receive`
 1. Jetzt gehen wir wieder in den Ordner, in dem sich unsere jekyll Website befindet. Hier habe ich bereits git Repository erstellt. Damit wir dieses jetzt auf unseren Server pushen können geben wir folgenden Befehl ein `git remote add deploy root@SERVER-IP:~/repo_website.git`
