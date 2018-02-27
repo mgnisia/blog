@@ -1,4 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-26T21:48:37+01:00</updated><id>http://localhost:4000/</id><title type="html">Tutorials, Tipps &amp;amp; Tricks zu Python, R, Anki und Co</title><subtitle>Blog über Python, R, Anki und viele andere Dinge</subtitle><author><name>Moritz Gnisia</name><email>gnisitricks@gmail.com</email></author><entry><title type="html">Einfache Funktionen in Python</title><link href="http://localhost:4000/Python_Funktionen/" rel="alternate" type="text/html" title="Einfache Funktionen in Python" /><published>2018-02-25T00:00:00+01:00</published><updated>2018-02-25T00:00:00+01:00</updated><id>http://localhost:4000/Python_Funktionen</id><content type="html" xml:base="http://localhost:4000/Python_Funktionen/">&lt;p&gt;Wie ist eine Funktion in Python aufgebaut? Worauf sollte man achten?&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-27T14:36:37+01:00</updated><id>http://localhost:4000/</id><title type="html">Tutorials, Tipps &amp;amp; Tricks zu Python, R, Anki und Co</title><subtitle>Blog über Python, R, Anki und viele andere Dinge</subtitle><author><name>Moritz Gnisia</name><email>gnisitricks@gmail.com</email></author><entry><title type="html">Hosting einer Jekyll Website auf einem Linux Server</title><link href="http://localhost:4000/Hosting_Jekyll/" rel="alternate" type="text/html" title="Hosting einer Jekyll Website auf einem Linux Server" /><published>2018-02-27T00:00:00+01:00</published><updated>2018-02-27T00:00:00+01:00</updated><id>http://localhost:4000/Hosting_Jekyll</id><content type="html" xml:base="http://localhost:4000/Hosting_Jekyll/">&lt;h3 id=&quot;folgende-voraussetzungen-solltet-ihr-für-die-folgende-anleitungtutorial-mitbringen&quot;&gt;Folgende Voraussetzungen solltet ihr für die folgende Anleitung/Tutorial mitbringen:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Linux-Server z.B. mit Ubuntu 16.04 bei einem Web-/Cloudhoster&lt;/li&gt;
+  &lt;li&gt;Jekyll Website (diese sollte lokal auf eurem PC laufen! Befehl, den ihr im Ordner der jekyll Website ausführen müsst: &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;(Domain auf die ihr gerne die Website verknüpfen wollt)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;weiterhin hilfreich sind Erfahrungen…:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;…mit dem Terminal in Linux&lt;/li&gt;
+  &lt;li&gt;…mit git&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;vorbereitung-des-servers&quot;&gt;Vorbereitung des Servers&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Einloggen mit dem Terminal auf eurem Linux-Server &lt;code class=&quot;highlighter-rouge&quot;&gt;ssh root@SERVER-IP&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Update &amp;amp; Upgrade des Servers &lt;code class=&quot;highlighter-rouge&quot;&gt;apt-get update &amp;amp;&amp;amp; upgrade&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Installation eines HTTP Servers wie z.B. nginx &lt;code class=&quot;highlighter-rouge&quot;&gt;apt-get install nginx&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Installation von git &lt;code class=&quot;highlighter-rouge&quot;&gt;apt-get install git-all&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Installation von Nano (Text Editor) &lt;code class=&quot;highlighter-rouge&quot;&gt;apt-get install nano&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Installation von Ruby über &lt;a href=&quot;http://rvm.io/&quot;&gt;rvm&lt;/a&gt;, die Schritte hierfür:
+    &lt;ol&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;apt-get install curl&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;\curl -sSL https://get.rvm.io | bash -s stable&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;source /etc/profile.d/rvm.sh&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rvm install ruby&lt;/code&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Insallation von bunble &lt;code class=&quot;highlighter-rouge&quot;&gt;gem install bundle&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Installation von jekyll &lt;code class=&quot;highlighter-rouge&quot;&gt;gem install jekyll&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Nun haben wir alle wesentlichen Programme und Pakete installiert! :smile:&lt;/p&gt;
+
+&lt;h3 id=&quot;ereichbarkeit-des-servers-zwischen-test&quot;&gt;Ereichbarkeit des Servers (Zwischen-Test)&lt;/h3&gt;
+
+&lt;p&gt;Nachdem wir nun einen HTTP Server installiert haben, können wir ausprobieren, ob dieser bereits erreichbar ist.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Dazu starten wir nginx mit &lt;code class=&quot;highlighter-rouge&quot;&gt;service nginx start&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;In eurem Browser solltet ihr nun, wenn ihr die IP Adresse eures Servers eingebt, folgende Website sehen:
+&lt;img src=&quot;http://localhost:4000/assets/images/nginx_screenshot.png&quot; alt=&quot;nginx&quot; class=&quot;img-responsive&quot; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;konfiguration-von-nginx&quot;&gt;Konfiguration von nginx&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Damit nginx auf den korrekten Ordner für unsere jekyll Website zugreift, erstellen wir noch den passenden Ordner&lt;/li&gt;
+  &lt;li&gt;Wir wechseln in das passende Verzeichnis &lt;code class=&quot;highlighter-rouge&quot;&gt;cd /var/www&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Erstellen eines neuen Ordners für die Website z.B. &lt;code class=&quot;highlighter-rouge&quot;&gt;mkdir eure_website&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Anpassung von nginx, damit es auf die Website zugreift &lt;code class=&quot;highlighter-rouge&quot;&gt;nano /etc/nginx/sites-enabled/default&lt;/code&gt;, nun passt die Einstellung &lt;code class=&quot;highlighter-rouge&quot;&gt;root /var/www/html;&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;root /var/www/eure_website;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;vorbereitung-des-git-repositorys-auf-unserem-server&quot;&gt;Vorbereitung des git Repositorys auf unserem Server&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Erstellen eines neues Ordners &lt;code class=&quot;highlighter-rouge&quot;&gt;mkdir repo_website.git&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Wechseln in den Ordner &lt;code class=&quot;highlighter-rouge&quot;&gt;cd repo_website.git&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Initialisierung des Repositorys &lt;code class=&quot;highlighter-rouge&quot;&gt;git --bare init&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Erstellen einer neuen Datei &lt;code class=&quot;highlighter-rouge&quot;&gt;post_receive&lt;/code&gt;, diese Datei sorgt bei jedem neuen Commit unserer Website von unserem PC dafür, dass die jekyll Website neu aufgebaut wird. Dazu geben wir ein &lt;code class=&quot;highlighter-rouge&quot;&gt;nano hooks/receive&lt;/code&gt;. Es öffnet sich das nano Fenster in diesen könnt ihr folgendes bash-Skript kopieren:
+    &lt;ul&gt;
+      &lt;li&gt;``` bash
+ #!/bin/bash
+ set -x
+ GIT_REPO=$HOME/repo_website.git
+ TMP_GIT_CLONE=$HOME/tmp/repo
+ GEMFILE=$TMP_GIT_CLONE/Gemfile
+ PUBLIC_WWW=/var/www/eure_website&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;git clone $GIT_REPO $TMP_GIT_CLONE
+ BUNDLE_GEMFILE=$GEMFILE bundle exec jekyll build -s $TMP_GIT_CLONE -d $PUBLIC_WWW
+ rm -Rf $TMP_GIT_CLONE
+ exit
+ ```&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Jetzt gehen wir wieder in den Ordner, in dem sich unsere jekyll Website befindet. Hier habe ich bereits git Repository erstellt. Damit wir dieses jetzt auf unseren Server pushen können geben wir folgenden Befehl ein &lt;code class=&quot;highlighter-rouge&quot;&gt;git remote add deploy root@SERVER-IP:~/repo_website.git&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Moritz Gnisia</name><email>gnisitricks@gmail.com</email></author><category term="jekyll" /><category term="Hosting" /><category term="Internet" /><category term="Linux" /><summary type="html">Folgende Voraussetzungen solltet ihr für die folgende Anleitung/Tutorial mitbringen:</summary></entry><entry><title type="html">Einfache Funktionen in Python</title><link href="http://localhost:4000/Python_Funktionen/" rel="alternate" type="text/html" title="Einfache Funktionen in Python" /><published>2018-02-25T00:00:00+01:00</published><updated>2018-02-25T00:00:00+01:00</updated><id>http://localhost:4000/Python_Funktionen</id><content type="html" xml:base="http://localhost:4000/Python_Funktionen/">&lt;p&gt;Wie ist eine Funktion in Python aufgebaut? Worauf sollte man achten?&lt;/p&gt;
 
 &lt;h3 id=&quot;theorie&quot;&gt;Theorie&lt;/h3&gt;
 
@@ -71,8 +152,6 @@
 &lt;p&gt;Damit die verschiedenen Parametertypen deutlich werden, folgen nun zu jedem Typ ein Beispiel.&lt;/p&gt;
 
 &lt;h4 id=&quot;pflichtparameter&quot;&gt;Pflichtparameter&lt;/h4&gt;
-
-&lt;h1 id=&quot;Änderung&quot;&gt;Änderung&lt;/h1&gt;
 
 &lt;p&gt;Bereits im Post &lt;a href=&quot;/Python_Funktionen/&quot;&gt;einfache Funktion&lt;/a&gt; haben wir eine Funktion mit Pflichtparametern geschrieben, diese war wie folgt definiert:&lt;/p&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addieren&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
