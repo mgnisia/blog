@@ -59,7 +59,7 @@ Nachdem wir nun einen HTTP Server installiert haben, können wir ausprobieren, o
 1. Wechseln in den Ordner `cd repo_website.git`
 1. Initialisierung des Repositorys `git --bare init`
 1. Erstellen einer neuen Datei `post-receive`, diese Datei sorgt bei jedem neuen Commit unserer Website von unserem PC dafür, dass die jekyll Website neu aufgebaut wird. Dazu geben wir ein `nano hooks/post-receive`. Es öffnet sich das nano Fenster in diesen könnt ihr folgendes bash-Skript kopieren:
-   * ``` bash
+   ``` bash
     #!/bin/bash -l
     set -x
     GIT_REPO=$HOME/repo_website.git
