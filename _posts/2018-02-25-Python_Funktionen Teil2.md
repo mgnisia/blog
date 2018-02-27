@@ -25,6 +25,8 @@ Damit die verschiedenen Parametertypen deutlich werden, folgen nun zu jedem Typ 
 
 # change part2
 
+# change 3
+
 Bereits im Post [einfache Funktion]({{ site.baseurl }}{% post_url 2018-02-25-Python_Funktionen %}) haben wir eine Funktion mit Pflichtparametern geschrieben, diese war wie folgt definiert:
 ``` python
 def addieren(add1, add2):
