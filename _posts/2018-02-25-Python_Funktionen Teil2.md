@@ -24,7 +24,7 @@ Damit die verschiedenen Parametertypen deutlich werden, folgen nun zu jedem Typ 
 # Änderungasdf adsasdfas
 
 # change part2
- asdf
+ asdfafsdf
 # change asdf asdfasdfaasdf asdf a dsf
 
 Bereits im Post [einfache Funktion]({{ site.baseurl }}{% post_url 2018-02-25-Python_Funktionen %}) haben wir eine Funktion mit Pflichtparametern geschrieben, diese war wie folgt definiert:
